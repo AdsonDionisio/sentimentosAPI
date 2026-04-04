@@ -1,0 +1,24 @@
+name: CI
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: login docker hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+        
+      - name: Cria imagem
+        run:  docker build -t ${{ secrets.DOCKER_USERNAME }}/sentimentosapi:latest .
+
+      - name: Envia imagem
+        run:  docker push ${{ secrets.DOCKER_USERNAME }}/sentimentosapi:latest
+    
+        
+        
+  
