@@ -1,19 +1,20 @@
-from fastapi import FastAPI, Response, status
-from .model import Message
-from .analysis import analyze_sentiment, get_result
+from fastapi import FastAPI
+from sqlmodel import SQLModel
+from app.database import engine
+from app.routes import analysis
+from app.services.analysis import AnalyserService
 
 app = FastAPI()
+
+@app.on_event("startup")
+def on_startup():
+    app.state.analyser = AnalyserService()
+    SQLModel.metadata.create_all(engine)
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/message/{message_id}")
-def read_message(message_id: int):
-    return get_result()
+app.include_router(analysis.router)
 
-@app.post("/message")
-def create_message(message: Message):
-    analyze_sentiment(message.text)
-    return Response(status_code=status.HTTP_200_OK)
 

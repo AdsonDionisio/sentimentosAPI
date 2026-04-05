@@ -1,1 +1,2 @@
 # sentimentosAPI
+Escrever no readMe
