@@ -12,7 +12,7 @@ API para análise de sentimentos em textos em Português.
 
 1. Clone o repositório:
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/AdsonDionisio/sentimentosAPI.git
    cd sentimentosAPI
    ```
 
@@ -28,7 +28,7 @@ API para análise de sentimentos em textos em Português.
    pip install -r requirements.txt
    ```
 
-## 🏃‍♂️ Executando a Aplicação
+### Executando a Aplicação
 
 Para iniciar o servidor em modo de desenvolvimento:
 
@@ -44,7 +44,7 @@ Para construir e executar a aplicação com Docker:
 
 1. Clone o repositório:
    ```bash
-   git clone <url-do-repositorio>
+   git clone https://github.com/AdsonDionisio/sentimentosAPI.git
    cd sentimentosAPI
    ```
 2. Crie a imagem docker e execute o container
@@ -64,7 +64,7 @@ docker run -p 8000:8000 --name sentimentos adsondiego/sentimentosapi:latest
 
 ## Testar a API sem a analise de sentimento 
 
-O código pode ser testado através do Swagger UI que é gerado automaticamente pelo FastAPI. Para acessá-lo, basta acessar no render o endereço https://sentimentosapi.onrender.com/docs
+O código pode ser testado através do Swagger UI que é gerado automaticamente pelo FastAPI. Para acessá-lo, basta acessar no render o endereço https://sentimentosapi.onrender.com
 
 Destacamos que a analise de sentimento não está sendo executada por falta de memoria no servidor gratuito do render. 
 
