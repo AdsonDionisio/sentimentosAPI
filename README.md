@@ -38,19 +38,38 @@ uvicorn app.main:app --reload
 
 Acesse a documentação interativa em: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-## 🐳 Docker
+## Docker
 
 Para construir e executar a aplicação com Docker:
 
-```bash
-# Build da imagem
-docker build -t sentimentosapi .
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
+   cd sentimentosAPI
+   ```
+2. Crie a imagem docker e execute o container
+    ```bash
+    # Build da imagem
+    docker build -t sentimentosapi .
 
-# Executar o container
-docker run -d -p 8000:8000 --name sentimentos sentimentosapi
+    # Executar o container
+    docker run -d -p 8000:8000 --name sentimentos sentimentosapi
+    ```
+
+## Usar a ultima imagem Docker do Docker Hub
+
+```bash
+docker run -p 8000:8000 --name sentimentos adsondiego/sentimentosapi:latest
 ```
 
-## 🧪 Testes
+## Testar a API sem a analise de sentimento 
+
+O código pode ser testado através do Swagger UI que é gerado automaticamente pelo FastAPI. Para acessá-lo, basta acessar no render o endereço https://sentimentosapi.onrender.com/docs
+
+Destacamos que a analise de sentimento não está sendo executada por falta de memoria no servidor gratuito do render. 
+
+
+## Testes
 
 ### Criar uma Mensagem
 
