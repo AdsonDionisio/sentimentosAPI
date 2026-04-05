@@ -64,7 +64,7 @@ docker run -p 8000:8000 --name sentimentos adsondiego/sentimentosapi:latest
 
 ## Testar a API sem a analise de sentimento 
 
-O código pode ser testado através do Swagger UI que é gerado automaticamente pelo FastAPI. Para acessá-lo, basta acessar no render o endereço https://sentimentosapi.onrender.com
+O código pode ser testado através do Swagger UI que é gerado automaticamente pelo FastAPI. Para acessá-lo, basta acessar no render o endereço https://sentimentosapi.onrender.com/docs
 
 Destacamos que a analise de sentimento não está sendo executada por falta de memoria no servidor gratuito do render. 
 
