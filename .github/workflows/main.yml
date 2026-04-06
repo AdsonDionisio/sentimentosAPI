@@ -19,7 +19,10 @@ jobs:
 
       - name: Envia imagem
         run:  docker push ${{ secrets.DOCKER_USERNAME }}/sentimentosapi:latest
-    
+        
+      - name: Ativar o deploy no render
+        run: curl -X POST "https://api.render.com/deploy/srv-d78r38dactks73cpe0b0?key=NHKh8GTTWp8"
+ 
         
         
   
